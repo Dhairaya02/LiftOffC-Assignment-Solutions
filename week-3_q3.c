@@ -1,19 +1,6 @@
 #include<stdio.h>
 int c=0;
-int lcm(int a,int b)
-{
-    if(c==0)
-    c=a>b?a:b;
 
-    if (c%a==0 && c%b==0)
-    return c;
-    else
-    {
-        c=c+1;
-        lcm(a,b);
-    }
-
-}
 int hcf(int a,int b)
 {
     int r;
@@ -27,6 +14,22 @@ int hcf(int a,int b)
         r=l%s;
         hcf(s,r);
     }
+}
+int lcm(int a,int b)
+{
+    if (hcf(a,b)==1)
+        return a*b;
+    if(c==0)
+    c=a>b?a:b;
+
+    if (c%a==0 && c%b==0)
+    return c;
+    else
+    {
+        c=c+1;
+        lcm(a,b);
+    }
+
 }
 void main()
 {
